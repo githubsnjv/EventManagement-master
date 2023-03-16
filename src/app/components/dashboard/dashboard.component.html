@@ -1,0 +1,98 @@
+
+
+<app-navbar-common></app-navbar-common>
+
+<h2 style="text-align: center; font-family: 'Times New Roman', Times, ">Enter the Event details</h2>
+<br>
+
+
+<div class="container" style="width: 40%; column-fill: auto;">
+    
+  <div class="card " style="width: 100%;background-color: bisque;padding: 3%;">
+    <div class="card-body">
+    
+      
+      <!-- form in card -->
+      <form [formGroup]=eventForm>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form1Example1" class="form-control" formControlName="eventname" />
+          <label class="form-label" for="form1Example1">Event name</label>
+        </div>
+      
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form1Example2" class="form-control" formControlName="eventOrganizer"/>
+          <label class="form-label" for="form1Example2">Event organizer name</label>
+        </div>
+    
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="date" id="form1Example3" class="form-control" formControlName="startDate"/>
+          <label class="form-label" for="form1Example3">event start date</label>
+        </div>
+    
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="date" id="form1Example4" class="form-control" formControlName="endDate"/>
+          <label class="form-label" for="form1Example4">event end date</label>
+        </div>
+      
+        <!-- <div class="form-outline mb-4">
+          <input type="file" class="form-control" id="customFile" />
+          <label class="form-label" for="customFile">Default file input example</label>
+         
+        </div> -->
+       
+        <div class="form-outline mb-4">
+          <input type="text" id="form1Example2" class="form-control" formControlName="faculty"/>
+          <label class="form-label" for="form1Example2">Enter the faculty name</label>
+        </div>
+      
+        <!-- Submit button -->
+        <div class="text-center mb-4">
+          <button type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Submit</button>
+        </div>
+      
+      </form>
+    </div>
+  </div>
+  
+
+
+
+  
+</div>
+  <br>
+<hr>
+<br><br>
+
+<!-- table -->
+<h2 style="text-align: center;">Event details table</h2>
+<br><br>
+
+<div class="container-fluid " style="width: 70%;">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S. No</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Organizer Name</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Mentor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-active" *ngFor= "let l of eventlist; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{l.eventname}}</td>
+            <td>{{l.eventOrganizer}}</td>
+            <td>{{l.startDate | date:'dd-MM-YYYY'}}</td>
+            <td>{{l.endDate | date:'dd-MM-YYYY'}}</td>
+            <td>{{l.faculty }}</td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

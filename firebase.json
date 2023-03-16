@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "eventmanagerase",
+    "public": "dist/fireapp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
